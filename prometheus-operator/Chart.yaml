@@ -5,7 +5,7 @@ version: 1.0.7
 keywords:
   - prometheus-operator
   - kubernetes
-home: https://github.com/stakater/chart-prometheus-operator
+home: https://github.com/stakater-charts/prometheus-operator
 maintainers:
 - name: Stakater
   email: stakater@aurorasolutions.io
