@@ -17,6 +17,9 @@ spec:
       - args:
         - --kubelet-service={{ .Values.prometheusOperator.deployment.kubeletService }}
         - --config-reloader-image={{ .Values.prometheusOperator.deployment.reloaderImage }}
+        {{- if .Values.prometheusOperator.deployment.prometheusConfigReloaderImage }}
+        - --prometheus-config-reloader={{ .Values.prometheusOperator.deployment.prometheusConfigReloaderImage }}:{{ .Values.prometheusOperator.deployment.prometheusConfigReloaderTag }}
+        {{- end }}
         image: "{{ .Values.prometheusOperator.image.name }}:{{ .Values.prometheusOperator.image.tag }}"
         name: {{ template "name" . }}
         ports:
