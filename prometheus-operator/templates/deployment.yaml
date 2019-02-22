@@ -13,6 +13,10 @@ spec:
       labels:
         k8s-app: {{ template "name" . }}
     spec:
+    {{- if .Values.prometheusOperator.tolerations }}
+      tolerations:
+{{ toYaml .Values.prometheusOperator.tolerations | indent 8 -}}
+      {{- end }}      
       containers:
       - args:
         - --kubelet-service={{ .Values.prometheusOperator.deployment.kubeletService }}
