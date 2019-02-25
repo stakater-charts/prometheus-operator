@@ -54,5 +54,5 @@ spec:
       serviceAccountName: {{ template "name" . }}
       {{- if .Values.prometheusOperator.deployment.nodeSelector }}
       nodeSelector:
-        {{ .Values.prometheusOperator.deployment.nodeSelector.key }}: {{ .Values.prometheusOperator.deployment.nodeSelector.value }}
+        {{ .Values.prometheusOperator.deployment.nodeSelector.key }}: "{{ .Values.prometheusOperator.deployment.nodeSelector.value }}"
       {{- end }}
